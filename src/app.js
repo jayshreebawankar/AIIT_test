@@ -9,12 +9,17 @@ const PORT = 5000;
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.json());
- 
-app.use('/user',userRoute)
+
+app.use('/user', userRoute)
 
 mongoose.connect(
-    `mongodb+srv://jayshreeaiit:Jayshree1@cluster0.md0tshx.mongodb.net/?retryWrites=true&w=majority`
-).then(()=>{
+    `mongodb+srv://Account2023:zS9yc4PyIj0ERhfE@cluster0.ddzi0la.mongodb.net/?retryWrites=true&w=majority`
+).then(() => {
     app.listen(PORT);
     console.log(`Server connected at PORT ${PORT}`);
-}).catch(err=> console.log(err))    
+}).catch(err => {
+    console.log("Failed to connect")
+    console.log(err)
+}
+
+)    
